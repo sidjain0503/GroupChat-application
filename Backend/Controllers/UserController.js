@@ -66,8 +66,10 @@ const keyword = req.query.search ? {
     ]
 }:{}
 
-const users = await User.find(keyword).find({_id : {$ne:req.user._id}})
+const users = await User.find(keyword)
 res.send(users)
 })
 
 module.exports = {registerUser,authUser,allUsers}
+
+// .find({_id : {$ne:req.user._id}})

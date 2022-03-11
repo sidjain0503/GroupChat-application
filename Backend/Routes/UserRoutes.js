@@ -7,6 +7,6 @@ const User = require('../Models/Users')
 UserRouter.route("/").post(registerUser).get(protect,allUsers)
 UserRouter.post('/login',authUser)
 UserRouter.get('/',allUsers)
-
+    
 
 module.exports = UserRouter
