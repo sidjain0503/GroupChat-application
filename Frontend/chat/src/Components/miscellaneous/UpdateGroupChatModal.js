@@ -213,6 +213,7 @@ const UpdateGroupChatModal = ({fetchAgain, setFetchAgain}) => {
                d="flex"
                justifyContent="center"
                >
+                 First group
                 {/* {selectedChat.chatName} */}
               </ModalHeader>
               <ModalCloseButton />

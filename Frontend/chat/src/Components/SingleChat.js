@@ -3,7 +3,7 @@ import { Box, Text } from "@chakra-ui/layout";
 // import { ChatState } from "../Context/ChatProvider";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 //import { getSender, getSenderFull } from "../config/ChatLogics";
-// import ProfileModal from "./miscellaneous/ProfileModal";
+import ProfileModal from "./miscellaneous/ProfileModal";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { IconButton } from '@chakra-ui/button';
 
@@ -34,13 +34,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 {/* {(!selectedChat.isGroupChat ? (
                     <> */}
                       {/* {getSender(user, selectedChat.users)} */}
-                      {/* <ProfileModal
-                        user={getSenderFull(user, selectedChat.users)}
+                       {/* AYUSHI
+                      <ProfileModal
+                        // user={getSenderFull(user, selectedChat.users)}
                       /> */}
                     {/* </> */}
                 {/* ) : ( */}
                     <>
                         {/* {selectedChat.chatName.toUpperCase()} */}
+                        FIRST GROUP
                         <UpdateGroupChatModal
                         //fetchMessages={fetchMessages}
                         fetchAgain={fetchAgain}
@@ -65,11 +67,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
            </>
         {/* ) : ( */}
           {/* // to get socket.io on same page */}
-        <Box d="flex" alignItems="center" justifyContent="center" h="100%">
+        {/* <Box d="flex" alignItems="center" justifyContent="center" h="100%">
           <Text fontSize="3xl" pb={3} fontFamily="Work sans">
             Click on a user to start chatting
           </Text>
-        </Box>
+        </Box> */}
        {/* )}   */}
     </>
   );

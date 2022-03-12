@@ -23,7 +23,7 @@ const ProfileModal = ({ /*user, children*/ }) => {
      {/* {children ? ( */}
         <span onClick={onOpen}>{/*children*/}</span>
       {/* ) : ( */}
-         <IconButton d={{ base: "flex" }} icon={<ViewIcon />} onClick={onOpen} />
+         <IconButton d={{ base: "flex" }} icon={<ViewIcon />} onClick={onOpen} mr={0}/>
         {/* )}  */}
       <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
          <ModalOverlay />

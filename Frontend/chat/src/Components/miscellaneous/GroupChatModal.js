@@ -2,6 +2,7 @@ import { useDisclosure } from  "@chakra-ui/hooks";
 import UserBadgeItem from "../useAvatar/UserBadgeItem";
 import UserListItem from "../useAvatar/UserListItem";
 import { AddIcon } from "@chakra-ui/icons";
+import ChatLoading from "../ChatLoading";
 // import { ChatState } from "../../Context/ChatProvider";
 import {
     Modal,
