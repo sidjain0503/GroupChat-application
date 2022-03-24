@@ -6,17 +6,20 @@ const connectdb = require('./Connect');
 const UserRouter = require('./Routes/UserRoutes');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const ChatRoutes = require('./Routes/ChatRoutes');
+const MessageRouter = require('./Routes/MessageRoute');
 
 connectdb();
 
 app.use(express.json());
 
 app.get('/',(req,res)=>{
-    res.send("hey your app running ")
+    res.send("Chat application succesfully running !  ")
 })
 
 app.use('/api/user',UserRouter);
 app.use('/api/chat',ChatRoutes)
+app.use('/api/messages',MessageRouter)
+
 app.use(notFound)
 app.use(errorHandler)
 
@@ -31,7 +34,17 @@ app.use(errorHandler)
 
 
 const port = process.env.PORT;
-app.listen(port,()=>
+const server = app.listen(port,()=>
 {
-    console.log(`server started succesfully on port ${port}`)
+    console.log(`server started succesfully on port http://localhost:${port}`)
+})
+const io = require('socket.io')(server,{
+    pingTimeout:60000,
+    cors:{
+        origin: 'http://localhost:3000'
+    }
+})
+
+io.on("connection",(socket)=>{
+    console.log("connected to socket.io")
 })
